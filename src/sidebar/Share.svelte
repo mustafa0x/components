@@ -1,10 +1,13 @@
 <ul class="social-buttons">
+<ul class="social-buttons">
   {#each social as [cls, get_url]}
-    <li><a href={get_url(url, title)} class="social-{cls}" rel="external" target="_blank">
-      <icon id={cls} />
-    </a></li>
+    <li>
+      <a href="{get_url(url, title)}" class="social-{cls}" rel="external" target="_blank">
+        <icon id={cls} />
+      </a>
+    </li>
   {/each}
-  <li><button on:click={() => copy(url)}><icon id="copy" /></button></li>
+  <li><button onclick={() => copy(url)}><icon id="copy" /></button></li>
 </ul>
 
 <script>
